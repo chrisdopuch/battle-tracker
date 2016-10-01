@@ -1,11 +1,14 @@
-# BattleTracker
+# Battle Tracker
 
-To start your Phoenix app:
+A Phoenix web app for tracking Warmachine and Hordes games
+
+To start your the Phoenix app:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
   * Install Node.js dependencies with `npm install`
   * Start Phoenix endpoint with `mix phoenix.server`
+  * Run in development mode with `iex -S mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
