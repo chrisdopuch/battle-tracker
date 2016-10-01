@@ -1,0 +1,58 @@
+<h2>Show battle</h2>
+
+<ul>
+
+  <li>
+    <strong>Points:</strong>
+    <%= @battle.points %>
+  </li>
+
+  <li>
+    <strong>Scenario:</strong>
+    <%= @battle.scenario %>
+  </li>
+
+  <li>
+    <strong>Won:</strong>
+    <%= @battle.won %>
+  </li>
+
+  <li>
+    <strong>Victory condition:</strong>
+    <%= @battle.victory_condition %>
+  </li>
+
+  <li>
+    <strong>Own faction:</strong>
+    <%= @battle.own_faction %>
+  </li>
+
+  <li>
+    <strong>Own leader:</strong>
+    <%= @battle.own_leader %>
+  </li>
+
+  <li>
+    <strong>Opponent faction:</strong>
+    <%= @battle.opponent_faction %>
+  </li>
+
+  <li>
+    <strong>Opponent leader:</strong>
+    <%= @battle.opponent_leader %>
+  </li>
+
+  <li>
+    <strong>Opponent name:</strong>
+    <%= @battle.opponent_name %>
+  </li>
+
+  <li>
+    <strong>Date:</strong>
+    <%= @battle.date %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: battle_path(@conn, :edit, @battle) %>
+<%= link "Back", to: battle_path(@conn, :index) %>

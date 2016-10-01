@@ -1,0 +1,71 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :points, class: "control-label" %>
+    <%= number_input f, :points, class: "form-control" %>
+    <%= error_tag f, :points %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :scenario, class: "control-label" %>
+    <%= text_input f, :scenario, class: "form-control" %>
+    <%= error_tag f, :scenario %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :won, class: "control-label" %>
+    <%= checkbox f, :won, class: "form-control" %>
+    <%= error_tag f, :won %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :victory_condition, class: "control-label" %>
+    <%= text_input f, :victory_condition, class: "form-control" %>
+    <%= error_tag f, :victory_condition %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :own_faction, class: "control-label" %>
+    <%= text_input f, :own_faction, class: "form-control" %>
+    <%= error_tag f, :own_faction %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :own_leader, class: "control-label" %>
+    <%= text_input f, :own_leader, class: "form-control" %>
+    <%= error_tag f, :own_leader %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :opponent_faction, class: "control-label" %>
+    <%= text_input f, :opponent_faction, class: "form-control" %>
+    <%= error_tag f, :opponent_faction %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :opponent_leader, class: "control-label" %>
+    <%= text_input f, :opponent_leader, class: "form-control" %>
+    <%= error_tag f, :opponent_leader %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :opponent_name, class: "control-label" %>
+    <%= text_input f, :opponent_name, class: "form-control" %>
+    <%= error_tag f, :opponent_name %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :date, class: "control-label" %>
+    <%= date_select f, :date, class: "form-control" %>
+    <%= error_tag f, :date %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
