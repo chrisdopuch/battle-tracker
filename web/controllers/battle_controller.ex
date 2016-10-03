@@ -14,7 +14,22 @@ defmodule BattleTracker.BattleController do
   end
 
   def create(conn, %{"battle" => battle_params}) do
-    changeset = Battle.changeset(%Battle{}, battle_params)
+    if upload = battle_params["photo"] do
+      # temporarily store the photo on the filesystem
+      # this is actually copied to the root dir /media
+      # I had to chmod it to allow elixir to write to that location
+      # short term I should move it to somewhere inside the repo
+      # long term I should integrate with some kind of cloud storage like imgur or AWS
+      File.cp(upload.path, "/media/#{upload.filename}")
+    end
+
+    new_params =
+      case Map.has_key?(battle_params, "photo") do
+        true -> Map.merge(battle_params, %{"photo_path" => "/media/#{battle_params["photo"].filename}"})
+        false -> battle_params
+      end
+
+    changeset = Battle.changeset(%Battle{}, new_params)
 
     case Repo.insert(changeset) do
       {:ok, _battle} ->

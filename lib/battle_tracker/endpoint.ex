@@ -3,6 +3,11 @@ defmodule BattleTracker.Endpoint do
 
   socket "/socket", BattleTracker.UserSocket
 
+  # Serve uploaded files from the /media directory
+  plug Plug.Static,
+      at: "/media",
+      from: "/media"
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest

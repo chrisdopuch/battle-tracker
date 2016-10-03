@@ -11,6 +11,7 @@ defmodule BattleTracker.Battle do
     field :opponent_faction, :string
     field :opponent_leader, :string
     field :opponent_name, :string
+    field :photo_path, :string
     field :date, Ecto.Date
 
     timestamps()
@@ -20,8 +21,9 @@ defmodule BattleTracker.Battle do
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
+    IO.inspect(params)
     struct
-    |> cast(params, [:points, :scenario, :won, :victory_condition, :own_faction, :own_leader, :opponent_faction, :opponent_leader, :opponent_name, :date])
+    |> cast(params, [:points, :scenario, :won, :victory_condition, :own_faction, :own_leader, :opponent_faction, :opponent_leader, :opponent_name, :photo_path, :date])
     |> validate_required([:points, :scenario, :won, :victory_condition, :own_faction, :own_leader, :opponent_faction, :opponent_leader, :opponent_name, :date])
   end
 end

@@ -52,6 +52,16 @@
     <%= @battle.date %>
   </li>
 
+  <li>
+    <strong>Photo:</strong>
+    <%= if @battle.photo_path do %>
+      <br />
+      <img src="<%= @battle.photo_path %>" width="400" />
+    <% else %>
+      no photo uploaded
+    <% end %>
+  </li>
+
 </ul>
 
 <%= link "Edit", to: battle_path(@conn, :edit, @battle) %>
