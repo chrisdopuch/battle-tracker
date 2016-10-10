@@ -3,7 +3,9 @@
   "license": "MIT",
   "scripts": {
     "deploy": "brunch build --production",
-    "watch": "brunch watch --stdin"
+    "watch": "brunch watch --stdin",
+    "postgres:start": "pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start",
+    "postgres:stop": "pg_ctl -D /usr/local/var/postgres stop -s -m fast"
   },
   "dependencies": {
     "phoenix": "file:deps/phoenix",
